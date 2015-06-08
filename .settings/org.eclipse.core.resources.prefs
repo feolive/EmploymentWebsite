@@ -8,4 +8,3 @@ encoding//src/main/resources/log4j.properties=UTF-8
 encoding//src/main/resources/servletcontext.properties=UTF-8
 encoding//src/main/webapp/WEB-INF/dynamicviews/basic/organization/orgManage.jsp=UTF-8
 encoding//src/test/resources=UTF-8
-encoding/<project>=UTF-8
