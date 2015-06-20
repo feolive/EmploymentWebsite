@@ -323,7 +323,6 @@
 			<version>${org.mybatis-spring-version}</version>
 		</dependency>
 		
-		
 		<!-- Jackson -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
@@ -342,6 +341,7 @@
 		</dependency>            
 		             
 	</dependencies>
+
 
 	<repositories>
 		<!-- Jcaptcha -->
@@ -367,7 +367,7 @@
 			<url>http://repository.springsource.com/maven/bundles/release/</url>
 		</repository>
 	</repositories>
-	
+
     <build>
         <plugins>
             <plugin>

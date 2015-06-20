@@ -95,15 +95,15 @@ public class IdentityController {
 	 */
 	@RequestMapping(method = RequestMethod.GET, value = { "/", "/identity/login", "/identity" })
 	public String login(Locale locale, Model model) {
-		
-		
-		
+
 		Subject currentUser = SecurityUtils.getSubject();
 		if (currentUser.isAuthenticated()) {
 			return "basic/index";
+			
 		}
 		logger.trace("Entering login");
-		return "basic/authorize/login";
+		return "basic/authorize/login"; 
+		
 	}
 
 	/**
