@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.charmyin.employment.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.charmyin.employment.model.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="login_id" property="loginId" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="organization_id" property="organizationId" jdbcType="INTEGER" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="passphrase" property="passphrase" jdbcType="VARCHAR" />
+    <result column="salt" property="salt" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="BIT" />
+    <result column="date_created" property="dateCreated" jdbcType="TIMESTAMP" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="INTEGER" />
+    <result column="cellphone" property="cellphone" jdbcType="VARCHAR" />
+    <result column="role" property="role" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, login_id, name, organization_id, email, passphrase, salt, state, date_created, 
+    remark, sex, cellphone, role
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.charmyin.employment.model.User" >
+    insert into user (id, login_id, name, 
+      organization_id, email, passphrase, 
+      salt, state, date_created, 
+      remark, sex, cellphone, 
+      role)
+    values (#{id,jdbcType=INTEGER}, #{loginId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{organizationId,jdbcType=INTEGER}, #{email,jdbcType=VARCHAR}, #{passphrase,jdbcType=VARCHAR}, 
+      #{salt,jdbcType=VARCHAR}, #{state,jdbcType=BIT}, #{dateCreated,jdbcType=TIMESTAMP}, 
+      #{remark,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{cellphone,jdbcType=VARCHAR}, 
+      #{role,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.charmyin.employment.model.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="loginId != null" >
+        login_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="organizationId != null" >
+        organization_id,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="passphrase != null" >
+        passphrase,
+      </if>
+      <if test="salt != null" >
+        salt,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="dateCreated != null" >
+        date_created,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="cellphone != null" >
+        cellphone,
+      </if>
+      <if test="role != null" >
+        role,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="loginId != null" >
+        #{loginId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationId != null" >
+        #{organizationId,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="passphrase != null" >
+        #{passphrase,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=BIT},
+      </if>
+      <if test="dateCreated != null" >
+        #{dateCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="cellphone != null" >
+        #{cellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="role != null" >
+        #{role,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.charmyin.employment.model.User" >
+    update user
+    <set >
+      <if test="loginId != null" >
+        login_id = #{loginId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="organizationId != null" >
+        organization_id = #{organizationId,jdbcType=INTEGER},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="passphrase != null" >
+        passphrase = #{passphrase,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null" >
+        salt = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=BIT},
+      </if>
+      <if test="dateCreated != null" >
+        date_created = #{dateCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="cellphone != null" >
+        cellphone = #{cellphone,jdbcType=VARCHAR},
+      </if>
+      <if test="role != null" >
+        role = #{role,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.charmyin.employment.model.User" >
+    update user
+    set login_id = #{loginId,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      organization_id = #{organizationId,jdbcType=INTEGER},
+      email = #{email,jdbcType=VARCHAR},
+      passphrase = #{passphrase,jdbcType=VARCHAR},
+      salt = #{salt,jdbcType=VARCHAR},
+      state = #{state,jdbcType=BIT},
+      date_created = #{dateCreated,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=INTEGER},
+      cellphone = #{cellphone,jdbcType=VARCHAR},
+      role = #{role,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.charmyin.employment.dao.JobPublishMapper" >
+  <resultMap id="BaseResultMap" type="com.charmyin.employment.model.JobPublish" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="job_id" property="jobId" jdbcType="INTEGER" />
+    <result column="resume_id" property="resumeId" jdbcType="INTEGER" />
+    <result column="job" property="job" jdbcType="VARCHAR" />
+    <result column="company_id" property="companyId" jdbcType="INTEGER" />
+    <result column="job_required" property="jobRequired" jdbcType="VARCHAR" />
+    <result column="publish_time" property="publishTime" jdbcType="TIMESTAMP" />
+    <result column="hunting_time" property="huntingTime" jdbcType="TIMESTAMP" />
+    <result column="hunting_status" property="huntingStatus" jdbcType="VARCHAR" />
+    <result column="publish_status" property="publishStatus" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, job_id, resume_id, job, company_id, job_required, publish_time, hunting_time, 
+    hunting_status, publish_status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from job_publish
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from job_publish
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.charmyin.employment.model.JobPublish" >
+    insert into job_publish (id, job_id, resume_id, 
+      job, company_id, job_required, 
+      publish_time, hunting_time, hunting_status, 
+      publish_status)
+    values (#{id,jdbcType=INTEGER}, #{jobId,jdbcType=INTEGER}, #{resumeId,jdbcType=INTEGER}, 
+      #{job,jdbcType=VARCHAR}, #{companyId,jdbcType=INTEGER}, #{jobRequired,jdbcType=VARCHAR}, 
+      #{publishTime,jdbcType=TIMESTAMP}, #{huntingTime,jdbcType=TIMESTAMP}, #{huntingStatus,jdbcType=VARCHAR}, 
+      #{publishStatus,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.charmyin.employment.model.JobPublish" >
+    insert into job_publish
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="jobId != null" >
+        job_id,
+      </if>
+      <if test="resumeId != null" >
+        resume_id,
+      </if>
+      <if test="job != null" >
+        job,
+      </if>
+      <if test="companyId != null" >
+        company_id,
+      </if>
+      <if test="jobRequired != null" >
+        job_required,
+      </if>
+      <if test="publishTime != null" >
+        publish_time,
+      </if>
+      <if test="huntingTime != null" >
+        hunting_time,
+      </if>
+      <if test="huntingStatus != null" >
+        hunting_status,
+      </if>
+      <if test="publishStatus != null" >
+        publish_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="jobId != null" >
+        #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="resumeId != null" >
+        #{resumeId,jdbcType=INTEGER},
+      </if>
+      <if test="job != null" >
+        #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="jobRequired != null" >
+        #{jobRequired,jdbcType=VARCHAR},
+      </if>
+      <if test="publishTime != null" >
+        #{publishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="huntingTime != null" >
+        #{huntingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="huntingStatus != null" >
+        #{huntingStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="publishStatus != null" >
+        #{publishStatus,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.charmyin.employment.model.JobPublish" >
+    update job_publish
+    <set >
+      <if test="jobId != null" >
+        job_id = #{jobId,jdbcType=INTEGER},
+      </if>
+      <if test="resumeId != null" >
+        resume_id = #{resumeId,jdbcType=INTEGER},
+      </if>
+      <if test="job != null" >
+        job = #{job,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        company_id = #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="jobRequired != null" >
+        job_required = #{jobRequired,jdbcType=VARCHAR},
+      </if>
+      <if test="publishTime != null" >
+        publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="huntingTime != null" >
+        hunting_time = #{huntingTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="huntingStatus != null" >
+        hunting_status = #{huntingStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="publishStatus != null" >
+        publish_status = #{publishStatus,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.charmyin.employment.model.JobPublish" >
+    update job_publish
+    set job_id = #{jobId,jdbcType=INTEGER},
+      resume_id = #{resumeId,jdbcType=INTEGER},
+      job = #{job,jdbcType=VARCHAR},
+      company_id = #{companyId,jdbcType=INTEGER},
+      job_required = #{jobRequired,jdbcType=VARCHAR},
+      publish_time = #{publishTime,jdbcType=TIMESTAMP},
+      hunting_time = #{huntingTime,jdbcType=TIMESTAMP},
+      hunting_status = #{huntingStatus,jdbcType=VARCHAR},
+      publish_status = #{publishStatus,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
