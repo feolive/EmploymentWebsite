@@ -7,7 +7,6 @@ Employment
 
 #Jars managed by Maven~
 
-#Postgresql is the initial database~ Of course, I'll make it compatible with mysql, oracle later~ 
 
 On developing~
 
