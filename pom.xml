@@ -16,7 +16,7 @@
 		<org.aspectj-jweaver-version>1.6.12</org.aspectj-jweaver-version>
 				
 		<org.apache.commons-collections>3.2.2</org.apache.commons-collections>
-		<org.apache.shiro-version>1.2.2</org.apache.shiro-version>
+		<org.apache.shiro-version>1.5.0</org.apache.shiro-version>
 		<org.apache.tomcat.dbcp_version>6.0.29</org.apache.tomcat.dbcp_version>
 		
 		<org.junit-version>4.7</org.junit-version>
