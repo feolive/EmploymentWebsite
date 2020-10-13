@@ -19,7 +19,7 @@
 		<org.apache.shiro-version>1.2.2</org.apache.shiro-version>
 		<org.apache.tomcat.dbcp_version>6.0.29</org.apache.tomcat.dbcp_version>
 		
-		<org.junit-version>4.7</org.junit-version>
+		<org.junit-version>4.13.1</org.junit-version>
 		<org.hibernate-validator-version>4.2.0.Final</org.hibernate-validator-version>
 		<org.postgresql.jdbc-version>9.1-901.jdbc4</org.postgresql.jdbc-version>
 		
