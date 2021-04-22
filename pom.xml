@@ -24,7 +24,7 @@
 		<org.postgresql.jdbc-version>9.1-901.jdbc4</org.postgresql.jdbc-version>
 		
 		
-		<org.mybatis-version>3.2.2</org.mybatis-version>
+		<org.mybatis-version>3.5.6</org.mybatis-version>
 		<org.mybatis-spring-version>1.2.0</org.mybatis-spring-version>
 		<org.mybatis-repository-path>/src/main/resources/migrations</org.mybatis-repository-path>
 		
