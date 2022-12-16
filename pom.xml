@@ -10,7 +10,7 @@
 	<properties>
 		<java-version>1.6</java-version>
 		
-		<org.springframework-version>4.1.2.RELEASE</org.springframework-version>
+		<org.springframework-version>5.2.20.RELEASE</org.springframework-version>
 		<org.spring-dao>2.0.7</org.spring-dao>
 		<org.aspectj-version>1.6.11</org.aspectj-version>
 		<org.aspectj-jweaver-version>1.6.12</org.aspectj-jweaver-version>
